@@ -14,7 +14,10 @@ insmod: all
 dmesg:
 	sudo dmesg | grep "helloworld: "
 
-rmmod:
-	sudo rmmod helloworld
+dmesg_clear:
+	sudo dmesg -C
 
-test: insmod dmesg rmmod
+rmmod:
+	-sudo rmmod helloworld
+
+test: all rmmod dmesg_clear insmod dmesg  
