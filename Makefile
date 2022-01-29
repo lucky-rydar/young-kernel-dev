@@ -1,6 +1,6 @@
 KDIR ?= /lib/modules/`uname -r`/build
 
-obj-m += helloworld.o
+obj-m += lkm.o
 
 all:
 	echo $(PWD)
@@ -9,12 +9,12 @@ clean:
 	make -C ${KDIR} M=$(PWD) clean
 
 insmod: all
-	sudo insmod helloworld.ko
+	sudo insmod lkm.ko
 
 dmesg:
-	sudo dmesg | grep "helloworld: "
+	sudo dmesg | grep "lkm: "
 
 rmmod:
-	sudo rmmod helloworld
+	sudo rmmod lkm
 
 test: insmod dmesg rmmod
