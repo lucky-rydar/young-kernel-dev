@@ -6,7 +6,7 @@ The aim of this repository is to learn how to code kernel modules, drivers etc.
 
 #### 1. see
 
-Is you are interested in my work you can switch between branches:
+If you are interested in my work you can switch between branches:
   
   1. hello-world-module
   2. more-interesting-module
