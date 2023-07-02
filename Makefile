@@ -5,10 +5,11 @@ obj-m += lkm.o
 all:
 	echo $(PWD)
 	make -C ${KDIR} M=$(PWD) modules
+
 clean:
 	make -C ${KDIR} M=$(PWD) clean
 
-insmod: all
+insmod: rmmod all
 	sudo insmod lkm.ko
 
 dmesg:
